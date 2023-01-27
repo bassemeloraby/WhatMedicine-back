@@ -3,15 +3,18 @@ const colors = require('colors');
 const dotenv = require('dotenv').config()
 const connectDB = require('./config/db');
 
+const router = express.Router();
+
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
+app.use('/api/drugs', require('./routes/drugRoute'));
 const port = process.env.PORT || '5000';
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
   })
+
 
 //Connect to the database before listening
 connectDB().then(() => {
