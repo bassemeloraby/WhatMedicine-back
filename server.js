@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const colors = require('colors');
 const dotenv = require('dotenv').config()
 const connectDB = require('./config/db');
@@ -6,6 +7,7 @@ const connectDB = require('./config/db');
 const router = express.Router();
 
 const app = express();
+app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/api/drugs', require('./routes/drugRoute'));
