@@ -1,7 +1,7 @@
 const Drug = require('../models/drugModel');
 
 const getDrugs = async (req, res) => {
-  const drugs = await Drug.find({}, {TradeName:1,ScientificName:1});
+  const drugs = await Drug.find({}, {TradeName:1,ScientificName:1}).sort( { "TradeName": 1 });
   res.status(200).json(drugs);
   // res.status(200).json([{_id,TradeName,ScientificName}]);
 };
