@@ -15,8 +15,18 @@ const getOneDrug = async (req, res) => {
   // res.status(200).json({ id: req.params.id });
   res.status(200).json(drugs);
 };
+const getScientificName = async (req, res) => {
+  // const drugs = await Drug.findById(req.params.id);
+  const drugs = await Drug.find({ ScientificName: req.params.ScientificName });
+  if (!drugs) {
+    res.status(400).json({ message: 'not found' });
+  }
+  // res.status(200).json({ id: req.params.id });
+  res.status(200).json(drugs);
+};
 
 module.exports = {
   getDrugs,
   getOneDrug,
+  getScientificName
 };
