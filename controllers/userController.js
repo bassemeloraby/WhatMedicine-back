@@ -9,6 +9,14 @@ const getusers = asyncHandler(async (req, res) => {
   res.status(200).json(users);
 });
 
+// @desc    Get one user
+// @route   GET /api/users
+// @access  public
+const getOneUser = asyncHandler(async (req, res) => {
+  const users = await User.findOne({ userName: req.body.userName });
+  res.status(200).json({ role: users.role });
+});
+
 // @desc    Set user
 // @route   POST /api/users
 // @access  public
@@ -18,7 +26,6 @@ const setUser = asyncHandler(async (req, res) => {
   if (!userName || !password || !role) {
     res.status(400).json({ message: 'Please add all fields' });
   }
-  
 
   const user = await User.create({
     userName,
@@ -69,6 +76,7 @@ const updateUser = asyncHandler(async (req, res) => {
 
 module.exports = {
   getusers,
+  getOneUser,
   setUser,
   deleteUser,
   updateUser,
