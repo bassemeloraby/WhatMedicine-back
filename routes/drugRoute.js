@@ -1,16 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const {
- getDrugs,
- getOneDrug,
+const { getDrugs, getOneDrug } = require('../controllers/drugController');
 
- 
-} = require('../controllers/drugController');
-
-router.route('/').get(getDrugs)
-router.route('/:_id').get(getOneDrug)
-
-
-
+router.route('/').get(getDrugs);
+router.route('/:_id').get(getOneDrug);
 
 module.exports = router;
