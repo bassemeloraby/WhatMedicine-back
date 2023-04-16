@@ -4,11 +4,11 @@ const productSchema = mongoose.Schema(
   {
     company: {
       type: String,
-      required: true,
+      // required: true,
     },
     productName: {
       type: String,
-      required: true,
+      // required: true,
       set: function(value) {
         if (!value) {
           return value;

@@ -18,6 +18,8 @@ const setProduct = asyncHandler(async (req, res) => {
     productName: req.body.productName,
   });
   res.status(200).json(products);
+  console.log(products)
+  // res.status(200).json(products);
   // try {
   //   if (!req.body.productName) {
   //     res.status(400).json({ message: 'Please add a Product Name field' });
