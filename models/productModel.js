@@ -16,6 +16,10 @@ const productSchema = mongoose.Schema(
         return value.charAt(0).toUpperCase() + value.slice(1);
       },
     },
+    photo: {
+      type: String,
+      // required: true,
+    },
   },
   {
     timestamps: true,
