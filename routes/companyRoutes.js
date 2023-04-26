@@ -18,5 +18,5 @@ function Protected(req, res, next) {
 }
 
 router.route('/').get(getCompanies).post(setCompany);
-router.route('/:id').delete(deleteCompany).put(updateCompany)
+router.route('/:id').delete(deleteCompany).patch(updateCompany)
 module.exports = router;
