@@ -16,7 +16,8 @@ const setProduct = asyncHandler(async (req, res) => {
   const products = await Product.create({
     company: req.body.company,
     productName: req.body.productName,
-    photo:req.body.photo
+    photo:req.body.photo,
+    category:req.body.category
   });
   res.status(200).json(products);
   console.log(products)

@@ -9,7 +9,7 @@ const productSchema = mongoose.Schema(
     productName: {
       type: String,
       // required: true,
-      set: function(value) {
+      set: function (value) {
         if (!value) {
           return value;
         }
@@ -17,6 +17,10 @@ const productSchema = mongoose.Schema(
       },
     },
     photo: {
+      type: String,
+      // required: true,
+    },
+    category: {
       type: String,
       // required: true,
     },
