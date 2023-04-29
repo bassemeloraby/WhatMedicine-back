@@ -24,6 +24,10 @@ const productSchema = mongoose.Schema(
       type: String,
       // required: true,
     },
+    age: {
+      type: String,
+      // required: true,
+    },
   },
   {
     timestamps: true,

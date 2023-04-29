@@ -17,7 +17,8 @@ const setProduct = asyncHandler(async (req, res) => {
     company: req.body.company,
     productName: req.body.productName,
     photo:req.body.photo,
-    category:req.body.category
+    category:req.body.category,
+    age:req.body.age
   });
   res.status(200).json(products);
   console.log(products)
