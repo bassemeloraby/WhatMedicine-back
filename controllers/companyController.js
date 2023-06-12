@@ -53,7 +53,8 @@ const updateCompany = asyncHandler(async (req, res) => {
 
   const updatedCompany = await Company.findByIdAndUpdate(
     req.params.id,
-    req.body,
+    req.body.companyName,
+    req.body.website,
     {
       new: true,
     }
