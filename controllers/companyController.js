@@ -46,10 +46,10 @@ const deleteCompany = asyncHandler(async (req, res) => {
 // @route   PUT /api/companies/:id
 // @access  public
 const updateCompany = asyncHandler(async (req, res) => {
-  const company = await Company.findById(req.params.id);
-  if (!company) {
-    res.status(400).json({ message: 'Company not found' });
-  }
+  //const company = await Company.findById(req.params.id);
+  //if (!company) {
+    //res.status(400).json({ message: 'Company not found' });
+  //}
 
   const updatedCompany = await Company.findByIdAndUpdate(
     req.params.id,
