@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const productSchema = mongoose.Schema(
   {
@@ -28,10 +28,18 @@ const productSchema = mongoose.Schema(
       type: String,
       // required: true,
     },
+    protectionKind: {
+      type: String,
+      // required: true,
+    },
+    protectionFor: {
+      type: String,
+      // required: true,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.model("Product", productSchema);

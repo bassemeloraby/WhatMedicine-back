@@ -1,5 +1,5 @@
-const Product = require('../models/productModel');
-const asyncHandler = require('express-async-handler');
+const Product = require("../models/productModel");
+const asyncHandler = require("express-async-handler");
 
 // @desc    Get products
 // @route   GET /api/products
@@ -16,12 +16,14 @@ const setProduct = asyncHandler(async (req, res) => {
   const products = await Product.create({
     company: req.body.company,
     productName: req.body.productName,
-    photo:req.body.photo,
-    category:req.body.category,
-    age:req.body.age
+    photo: req.body.photo,
+    category: req.body.category,
+    age: req.body.age,
+    protectionKind: req.body.protectionKind,
+    protectionFor: req.body.protectionFor,
   });
   res.status(200).json(products);
-  console.log(products)
+  console.log(products);
   // res.status(200).json(products);
   // try {
   //   if (!req.body.productName) {
@@ -45,7 +47,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findByIdAndRemove(req.params.id);
 
   if (!product) {
-    res.status(400).json({ message: 'product not found' });
+    res.status(400).json({ message: "product not found" });
   }
 
   res.status(200).json({ id: req.params.id });
@@ -57,7 +59,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
 const updateProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (!product) {
-    res.status(400).json({ message: 'product not found' });
+    res.status(400).json({ message: "product not found" });
   }
 
   const updatedProduct = await Product.findByIdAndUpdate(
