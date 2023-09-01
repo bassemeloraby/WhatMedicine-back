@@ -17,9 +17,20 @@ const getOneDrug = asyncHandler(async (req, res) => {
   res.status(200).json(drugs);
 });
 
+// @desc    Set drug
+// @route   POST /api/companies
+// @access  public
+const setDrug = asyncHandler(async (req, res) => {
+  const drugs = await Drug.create({
+    TradeName: req.body.TradeName,
+  });
+  res.status(200).json(drugs);
+  console.log(drugs);
+});
 
 
 module.exports = {
   getDrugs,
   getOneDrug,
+  setDrug
 };
