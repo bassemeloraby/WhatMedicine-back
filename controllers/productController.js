@@ -19,24 +19,9 @@ const setProduct = asyncHandler(async (req, res) => {
     photo: req.body.photo,
     category: req.body.category,
     age: req.body.age,
-    protectionKind: req.body.protectionKind,
-    protectionFor: req.body.protectionFor,
   });
   res.status(200).json(products);
   console.log(products);
-  // res.status(200).json(products);
-  // try {
-  //   if (!req.body.productName) {
-  //     res.status(400).json({ message: 'Please add a Product Name field' });
-  //   }
-  // const products = await Product.create({
-  //     productName: req.body.productName,
-  // })
-  //   // .createIndex({ companyName: 1 }, { unique: true });
-  //   res.status(200).json(products);
-  // } catch (error) {
-  //   res.status(400);
-  // }
 });
 
 // @desc    Delete company
